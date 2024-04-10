@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Trigger the workflow on push events to the main branch; change as needed
+      - dev
 
 jobs:
   deploy:
@@ -17,11 +18,11 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: <your-aws-region>  # Replace <your-aws-region> with your AWS region, e.g., us-east-1
+        aws-region: us-east-1  # Replace <your-aws-region> with your AWS region, e.g., us-east-1
 
     - name: Deploy to AWS Amplify
       uses: aws-actions/amplify-console-deploy-action@v1.1.2
       with:
         amplify_app_id: ${{ secrets.AMPLIFY_APP_ID }}  # The app ID of your Amplify app
-        amplify_env_name: <your-amplify-env-name>  # The name of your Amplify environment, e.g., 'prod' or 'dev'
+        amplify_env_name: dev  # The name of your Amplify environment, e.g., 'prod' or 'dev'
         head_ref: ${{ github.ref }}  # The branch to deploy
