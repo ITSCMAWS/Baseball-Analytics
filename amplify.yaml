@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    # No build commands are needed for a basic static site
+    preBuild:
+      commands:
+        - echo 'No pre-build steps required for static site'
+    build:
+      commands:
+        - echo 'No build steps required for static site'
+  artifacts:
+    # Specify the base directory and files to include in the deployment
+    baseDirectory: src
+    files:
+      - '**/*'  # Include all files in the src directory
+  cache:
+    paths: []  # No dependencies to cache for a static site
