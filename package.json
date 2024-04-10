@@ -1,0 +1,16 @@
+{
+  "name": "ITSCM 451Z Project",
+  "version": "1.0.0",
+  "description": "A simple web site for AWS Amplify deployment",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo 'No start script required for static site'",
+    "build": "echo 'No build step required for static site'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/your-project-name.git"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
